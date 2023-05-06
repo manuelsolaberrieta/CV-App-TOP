@@ -1,5 +1,8 @@
 import React from "react";
 import GeneralInformation from "./General_Information.js";
+import Education from "./Education.js";
+import Experience from "./Experience.js";
+import Preview from "./Preview.js";
 
 class BaseForm extends React.Component {
   constructor() {
@@ -17,10 +20,18 @@ class BaseForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <GeneralInformation setValue={this.handleChange} />
-        <input type="submit" />
-      </form>
+      <div className="general-container">
+        <form onSubmit={this.handleSubmit}>
+          <h2>General Information</h2>
+          <GeneralInformation setValue={this.handleChange} />
+          <h2>Education</h2>
+          <Education setValue={this.handleChange} />
+          <h2>Experience</h2>
+          <Experience setValue={this.handleChange} />
+          <input type="submit" />
+        </form>
+        <Preview statePreview={this.state} />
+      </div>
     );
   }
 }
