@@ -12,9 +12,17 @@ class BaseForm extends React.Component {
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
+  handleImageChange = (event) => {
+    if (event.target.files != null) {
+      let img = event.target.files[0];
+      this.setState({
+        profilePicture: URL.createObjectURL(img),
+      });
+    }
+  };
+  addComponent = () => {};
   handleSubmit = (event) => {
     alert("Something was submitted: ");
-    console.log(this.state);
     event.preventDefault();
   };
 
@@ -23,11 +31,24 @@ class BaseForm extends React.Component {
       <div className="general-container">
         <form onSubmit={this.handleSubmit}>
           <h2>General Information</h2>
-          <GeneralInformation setValue={this.handleChange} />
+          <GeneralInformation
+            setValue={this.handleChange}
+            setImage={this.handleImageChange}
+          />
           <h2>Education</h2>
-          <Education setValue={this.handleChange} />
+          <button type="button" id="add-education" onClick={this.addComponent}>
+            Add
+          </button>
+          <div id="education">
+            <Education setValue={this.handleChange} />
+          </div>
           <h2>Experience</h2>
-          <Experience setValue={this.handleChange} />
+          <button type="button" id="add-education">
+            Add
+          </button>
+          <div id="experience">
+            <Experience setValue={this.handleChange} />
+          </div>
           <input type="submit" />
         </form>
         <Preview statePreview={this.state} />

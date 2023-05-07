@@ -19,16 +19,14 @@ section {
 }
 .general-container {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 2fr 3fr;
   gap: 50px;
-  padding: 50px;
+  padding: 50px 300px;
 }
 .preview-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
   border: 2px solid;
-  padding: 10px 20px;
-  gap: 10px;
 }
 .gen-info-header {
   grid-column: 1/3;
@@ -37,8 +35,24 @@ section {
   align-items: center;
   font-size: 2rem;
   font-weight: bold;
+  border-bottom: 2px solid;
 }
 .gen-info-sidebar {
   grid-column: 2/3;
   grid-row: 2 / 5;
+  border-left: 2px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+img {
+  width: 100px;
+  height: auto;
+}
+.name-and-lastname,
+.gen-info-description,
+.education-section,
+.experience-section {
+  margin: 0px 20px;
 }

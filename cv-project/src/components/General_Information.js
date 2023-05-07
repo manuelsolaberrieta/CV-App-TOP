@@ -41,13 +41,13 @@ class GeneralInformation extends React.Component {
           onChange={this.props.setValue}
           placeholder="phone"
         />
-        {/* <FileInput
+        <input
           type="file"
           name="profilePicture"
-          onChange={this.props.setValue}
+          onChange={this.props.setImage}
           placeholder="photo"
           accept="image/*"
-        /> */}
+        />
       </section>
     );
   }

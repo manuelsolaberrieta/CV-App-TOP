@@ -37,24 +37,26 @@ class Preview extends React.Component {
             id="profile-picture"
           />
           <h2>Personal Details</h2>
-          <h3>Adress</h3>
-          <span id="adress">
-            {this.props.statePreview.adress !== ""
-              ? this.props.statePreview.adress
-              : ""}
-          </span>
-          <h3>Phone Number</h3>
-          <span id="phone-number">
-            {this.props.statePreview.phone !== ""
-              ? this.props.statePreview.phone
-              : ""}
-          </span>
-          <h3>Email</h3>
-          <span id="email">
-            {this.props.statePreview.email !== ""
-              ? this.props.statePreview.email
-              : ""}
-          </span>
+          <div className="personal-details-container">
+            <h3>Adress</h3>
+            <span id="adress">
+              {this.props.statePreview.adress !== ""
+                ? this.props.statePreview.adress
+                : ""}
+            </span>
+            <h3>Phone Number</h3>
+            <span id="phone-number">
+              {this.props.statePreview.phone !== ""
+                ? this.props.statePreview.phone
+                : ""}
+            </span>
+            <h3>Email</h3>
+            <span id="email">
+              {this.props.statePreview.email !== ""
+                ? this.props.statePreview.email
+                : ""}
+            </span>
+          </div>
         </aside>
         {/* luego reemplazar por componente propio para crear más de una sección */}
         <div className="education-section">
