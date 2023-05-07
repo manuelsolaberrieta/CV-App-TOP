@@ -10,11 +10,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  background-color: silver;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+#main-header {
+  height: 100px;
+  padding-left: 50px;
+  font-size: 2rem;
+  font-weight: 900;
+  background-color: #3b4d61;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 2px solid;
 }
 section {
   display: flex;
@@ -53,15 +66,16 @@ h5 {
 .general-container {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  gap: 50px;
-  padding: 50px 150px;
+  padding: 5px;
+  padding-top: 10px;
 }
 .preview-container {
   display: grid;
-  border: 2px solid;
+  border: 1px solid;
   margin: 0;
   padding: 0;
   max-height: max-content;
+  background-color: #6b7b8c;
 }
 .gen-info-header {
   grid-column: 1/6;
@@ -71,20 +85,24 @@ h5 {
   font-size: 2rem;
   font-weight: bold;
   padding: 20px 10px;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid black;
+  background-color: #3b4d61;
+  color: aliceblue;
 }
 .gen-info-sidebar {
   grid-column: 5/6;
   grid-row: 2 / 5;
-  border-left: 2px solid;
+  border-left: 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: #b3a781;
 }
 img {
-  width: 100px;
+  width: 150px;
   height: auto;
+  border: 4px solid rgb(47, 33, 15);
 }
 .gen-info-description {
   grid-column: 1/5;
@@ -106,6 +124,33 @@ img {
 }
 #base-form,
 .preview-container {
-  max-height: 85vh;
   overflow: auto;
+  margin: 0px 50px;
+  height: 800px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+#base-form {
+  background-color: #b3a781;
+  padding: 20px;
+  height: 760px;
+  border: 1px solid brown;
+}
+footer {
+  grid-column: 1/3;
+}
+@media only screen and (max-width: 800px) {
+  .general-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #base-form,
+  .preview-container {
+    overflow: auto;
+    margin: auto;
+    width: 90%;
+  }
+  .preview-container {
+    grid-row: 1/2;
+  }
 }
