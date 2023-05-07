@@ -5,25 +5,25 @@ class Education extends React.Component {
       <section>
         <input
           type="text"
-          name="schoolName"
+          name={"schoolName" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="school name"
         />
         <input
           type="text"
-          name="studyTitle"
+          name={"studyTitle" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="title"
         />
         <input
           type="text"
-          name="studyFromDate"
+          name={"studyFromDate" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="study start date"
         />
         <input
           type="text"
-          name="studyToDate"
+          name={"studyToDate" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="study end date"
         />

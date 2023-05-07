@@ -1,7 +1,25 @@
 import React from "react";
+import EducationPreview from "./EducationPreview.js";
+import ExperiencePreview from "./ExperiencePreview copy.js";
 
 class Preview extends React.Component {
   render() {
+    const prevEduComp = [];
+    for (let i = 0; i < this.props.eduCount; i++) {
+      prevEduComp.push(
+        <EducationPreview state={this.props.statePreview} key={i} compNum={i} />
+      );
+    }
+    const prevExpComp = [];
+    for (let i = 0; i < this.props.expCount; i++) {
+      prevExpComp.push(
+        <ExperiencePreview
+          state={this.props.statePreview}
+          key={i}
+          compNum={i}
+        />
+      );
+    }
     return (
       <div className="preview-container">
         <div className="gen-info-header">
@@ -58,31 +76,13 @@ class Preview extends React.Component {
             </span>
           </div>
         </aside>
-        {/* luego reemplazar por componente propio para crear más de una sección */}
         <div className="education-section">
           <h2>Education</h2>
-          <h3>School: </h3>
-          <span id="school-name"></span>
-          <h3>Title: </h3>
-          <span id="school-title"></span>
-          <h3>from: </h3>
-          <span id="school-from"></span>
-          <h3>to: </h3>
-          <span id="school-to"></span>
+          {prevEduComp}
         </div>
         <div className="experience-section">
-          {/* luego reemplazar por componente propio para crear más de una sección */}
           <h2>Experience</h2>
-          <h3>Company: </h3>
-          <span id="work-place"></span>
-          <h3>Position: </h3>
-          <span id="work-title"></span>
-          <h3>Work Description: </h3>
-          <span id="work-description"></span>
-          <h3>from: </h3>
-          <span id="work-from"></span>
-          <h3>to: </h3>
-          <span id="work-to"></span>
+          {prevExpComp}
         </div>
       </div>
     );
