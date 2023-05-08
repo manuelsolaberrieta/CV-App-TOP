@@ -1,25 +1,9 @@
 import React from "react";
 import EducationPreview from "./EducationPreview.js";
-import ExperiencePreview from "./ExperiencePreview copy.js";
+import ExperiencePreview from "./ExperiencePreview.js";
 
 class Preview extends React.Component {
   render() {
-    const prevEduComp = [];
-    for (let i = 0; i < this.props.eduCount; i++) {
-      prevEduComp.push(
-        <EducationPreview state={this.props.statePreview} key={i} compNum={i} />
-      );
-    }
-    const prevExpComp = [];
-    for (let i = 0; i < this.props.expCount; i++) {
-      prevExpComp.push(
-        <ExperiencePreview
-          state={this.props.statePreview}
-          key={i}
-          compNum={i}
-        />
-      );
-    }
     return (
       <div className="preview-container">
         <div className="gen-info-header">
@@ -78,11 +62,27 @@ class Preview extends React.Component {
         </aside>
         <div className="education-section">
           <h2>Education</h2>
-          {prevEduComp}
+          {this.props.eduCount.map((e) => {
+            return (
+              <EducationPreview
+                key={e.key}
+                compNum={e.compNum}
+                state={this.props.statePreview}
+              />
+            );
+          })}
         </div>
         <div className="experience-section">
           <h2>Experience</h2>
-          {prevExpComp}
+          {this.props.expCount.map((e) => {
+            return (
+              <ExperiencePreview
+                key={e.key}
+                compNum={e.compNum}
+                state={this.props.statePreview}
+              />
+            );
+          })}
         </div>
       </div>
     );

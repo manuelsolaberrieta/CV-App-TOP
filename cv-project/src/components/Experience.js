@@ -5,31 +5,31 @@ class Experience extends React.Component {
       <section>
         <input
           type="text"
-          name="workPlace"
+          name={"workPlace" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="company"
         />
         <input
           type="text"
-          name="workPosition"
+          name={"workPosition" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="position"
         />
         <input
           type="text"
-          name="workDescription"
+          name={"workDescription" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="work description"
         />
         <input
           type="text"
-          name="workFromDate"
+          name={"workFromDate" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="work start date"
         />
         <input
           type="text"
-          name="workToDate"
+          name={"workToDate" + this.props.compNum}
           onChange={this.props.setValue}
           placeholder="work end date"
         />

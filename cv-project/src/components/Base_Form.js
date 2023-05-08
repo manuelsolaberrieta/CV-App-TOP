@@ -7,7 +7,7 @@ import Preview from "./Preview.js";
 class BaseForm extends React.Component {
   constructor() {
     super();
-    this.state = { eduCount: 0, expCount: 0 };
+    this.state = { eduCompList: [], expCompList: [] };
   }
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -20,30 +20,30 @@ class BaseForm extends React.Component {
       });
     }
   };
-  addComponent = (event) => {
+  addEduComponent = (event) => {
+    let i = Math.random();
     this.setState({
-      [event.target.getAttribute("count")]:
-        this.state[event.target.getAttribute("count")] + 1,
+      eduCompList: [...this.state.eduCompList, { key: i, compNum: i }],
+    });
+  };
+  addExpComponent = (event) => {
+    let i = Math.random();
+    this.setState({
+      expCompList: [...this.state.expCompList, { key: i, compNum: i }],
     });
   };
   handleSubmit = (event) => {
-    alert("Something was submitted: ");
+    console.log(this.state);
     event.preventDefault();
+  };
+  deleteComponent = (event) => {
+    this.setState({
+      [event.target.getAttribute("count")]:
+        this.state[event.target.getAttribute("count")] - 1,
+    });
   };
 
   render() {
-    const eduCompList = [];
-    for (let i = 0; i < this.state.eduCount; i++) {
-      eduCompList.push(
-        <Education key={i} compNum={i} setValue={this.handleChange} />
-      );
-    }
-    const expCompList = [];
-    for (let i = 0; i < this.state.expCount; i++) {
-      expCompList.push(
-        <Experience key={i} compNum={i} setValue={this.handleChange} />
-      );
-    }
     return (
       <div className="general-container">
         <form id="base-form" onSubmit={this.handleSubmit}>
@@ -55,34 +55,44 @@ class BaseForm extends React.Component {
           <h2>Education</h2>
           <button
             type="button"
-            id="add-education"
             count="eduCount"
-            name="neweducation"
-            onClick={this.addComponent}
+            onClick={this.addEduComponent}
             className="add-button"
           >
             Add
           </button>
-          {eduCompList.map((e) => {
-            return e;
+          {this.state.eduCompList.map((e) => {
+            return (
+              <Education
+                key={e.key}
+                compNum={e.compNum}
+                setValue={this.handleChange}
+              />
+            );
           })}
           <h2>Experience</h2>
           <button
             type="button"
-            id="add-experience"
             count="expCount"
-            name="newexperience"
-            onClick={this.addComponent}
+            onClick={this.addExpComponent}
             className="add-button"
           >
             Add
           </button>
-          {expCompList}
+          {this.state.expCompList.map((e) => {
+            return (
+              <Experience
+                key={e.key}
+                compNum={e.compNum}
+                setValue={this.handleChange}
+              />
+            );
+          })}
           <input type="submit" value="send" />
         </form>
         <Preview
-          expCount={this.state.expCount}
-          eduCount={this.state.eduCount}
+          expCount={this.state.expCompList}
+          eduCount={this.state.eduCompList}
           statePreview={this.state}
         />
       </div>
