@@ -9,8 +9,8 @@ class Preview extends React.Component {
         <div className="gen-info-header">
           <div className="name-and-lastname">
             <span id="name">
-              {this.props.statePreview.name !== ""
-                ? this.props.statePreview.name + " "
+              {this.props.statePreview.firstName !== ""
+                ? this.props.statePreview.firstName + " "
                 : ""}
             </span>
             <span id="lastname">

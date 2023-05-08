@@ -7,7 +7,11 @@ import Preview from "./Preview.js";
 class BaseForm extends React.Component {
   constructor() {
     super();
-    this.state = { eduCompList: [], expCompList: [] };
+    this.state = {
+      firstName: "Your Name Here",
+      eduCompList: [],
+      expCompList: [],
+    };
   }
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });

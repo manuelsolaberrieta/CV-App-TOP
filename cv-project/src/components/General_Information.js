@@ -6,7 +6,7 @@ class GeneralInformation extends React.Component {
       <section>
         <input
           type="text"
-          name="name"
+          name="firstName"
           autoComplete="given-name"
           onChange={this.props.setValue}
           placeholder="name"
@@ -41,7 +41,11 @@ class GeneralInformation extends React.Component {
           onChange={this.props.setValue}
           placeholder="phone"
         />
+        <label htmlFor="profilePicture" className="custom-file-upload">
+          Upload your profile picture
+        </label>
         <input
+          id="profilePicture"
           type="file"
           name="profilePicture"
           onChange={this.props.setImage}
