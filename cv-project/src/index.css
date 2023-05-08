@@ -24,6 +24,7 @@ code {
   font-weight: 900;
   background-color: #3b4d61;
   color: aliceblue;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -143,12 +144,16 @@ footer {
   .general-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
   }
   #base-form,
   .preview-container {
     overflow: auto;
     margin: auto;
-    width: 90%;
+    max-width: 90vw;
+  }
+  #base-form {
+    min-width: 70vw;
   }
   .preview-container {
     grid-row: 1/2;

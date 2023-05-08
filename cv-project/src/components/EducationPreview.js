@@ -15,6 +15,7 @@ class EducationPreview extends React.Component {
             ? this.props.state["studyTitle" + this.props.compNum]
             : ""}
         </span>
+        <br />
         <span id="school-from">
           {this.props.state["studyFromDate" + this.props.compNum] !== ""
             ? this.props.state["studyFromDate" + this.props.compNum]

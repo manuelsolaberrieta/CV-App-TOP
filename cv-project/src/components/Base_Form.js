@@ -59,10 +59,13 @@ class BaseForm extends React.Component {
             count="eduCount"
             name="neweducation"
             onClick={this.addComponent}
+            className="add-button"
           >
             Add
           </button>
-          {eduCompList}
+          {eduCompList.map((e) => {
+            return e;
+          })}
           <h2>Experience</h2>
           <button
             type="button"
@@ -70,6 +73,7 @@ class BaseForm extends React.Component {
             count="expCount"
             name="newexperience"
             onClick={this.addComponent}
+            className="add-button"
           >
             Add
           </button>

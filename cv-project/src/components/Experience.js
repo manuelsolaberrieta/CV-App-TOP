@@ -33,6 +33,9 @@ class Experience extends React.Component {
           onChange={this.props.setValue}
           placeholder="work end date"
         />
+        <button type="button" className="delete-button">
+          Delete
+        </button>
       </section>
     );
   }

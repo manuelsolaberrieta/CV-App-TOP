@@ -27,6 +27,14 @@ class Education extends React.Component {
           onChange={this.props.setValue}
           placeholder="study end date"
         />
+        <button
+          type="button"
+          className="delete-button"
+          name={this.props.compNum}
+          onClick={this.props.deleteComp}
+        >
+          Delete
+        </button>
       </section>
     );
   }
