@@ -3,6 +3,7 @@ import GeneralInformation from "./General_Information.js";
 import Education from "./Education.js";
 import Experience from "./Experience.js";
 import Preview from "./Preview.js";
+import ReactToPrint from "react-to-print";
 
 class BaseForm extends React.Component {
   constructor() {
@@ -109,9 +110,16 @@ class BaseForm extends React.Component {
               />
             );
           })}
-          <input type="submit" value="send" />
+
+          <ReactToPrint
+            trigger={() => {
+              return <input type="submit" value="Print" />;
+            }}
+            content={() => this.componentRef}
+          />
         </form>
         <Preview
+          ref={(el) => (this.componentRef = el)}
           expCount={this.state.expCompList}
           eduCount={this.state.eduCompList}
           statePreview={this.state}

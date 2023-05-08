@@ -24,7 +24,6 @@ code {
   font-weight: 900;
   background-color: #3b4d61;
   color: aliceblue;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -174,7 +173,34 @@ footer {
   #base-form {
     min-width: 70vw;
   }
+  #main-header {
+    width: max-content;
+    margin: auto;
+    padding: 0;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #cv-header {
+    width: 200px;
+  }
   .preview-container {
     grid-row: 1/2;
+  }
+}
+@media print {
+  .preview-container {
+    overflow: visible;
+    display: grid;
+    border: 1px solid;
+    margin: 0;
+    padding: 0;
+    max-height: max-content;
+    background-color: #6b7b8c;
+    width: 210mm;
+    height: auto;
+    min-height: 297mm;
   }
 }
