@@ -20,13 +20,13 @@ class BaseForm extends React.Component {
       });
     }
   };
-  addEduComponent = (event) => {
+  addEduComponent = () => {
     let i = Math.random();
     this.setState({
       eduCompList: [...this.state.eduCompList, { key: i, compNum: i }],
     });
   };
-  addExpComponent = (event) => {
+  addExpComponent = () => {
     let i = Math.random();
     this.setState({
       expCompList: [...this.state.expCompList, { key: i, compNum: i }],
@@ -36,13 +36,28 @@ class BaseForm extends React.Component {
     console.log(this.state);
     event.preventDefault();
   };
-  deleteComponent = (event) => {
-    this.setState({
-      [event.target.getAttribute("count")]:
-        this.state[event.target.getAttribute("count")] - 1,
+  deleteEduComponent = (event) => {
+    let arr = this.state.eduCompList;
+    let index;
+    arr.forEach((e, i) => {
+      if (e.compNum === parseFloat(event.target.name)) {
+        index = i;
+      }
     });
+    arr.splice(index, 1);
+    this.setState({ eduCompList: arr });
   };
-
+  deleteExpComponent = (event) => {
+    let arr = this.state.expCompList;
+    let index;
+    arr.forEach((e, i) => {
+      if (e.compNum === parseFloat(event.target.name)) {
+        index = i;
+      }
+    });
+    arr.splice(index, 1);
+    this.setState({ expCompList: arr });
+  };
   render() {
     return (
       <div className="general-container">
@@ -67,6 +82,7 @@ class BaseForm extends React.Component {
                 key={e.key}
                 compNum={e.compNum}
                 setValue={this.handleChange}
+                deleteComp={this.deleteEduComponent}
               />
             );
           })}
@@ -85,6 +101,7 @@ class BaseForm extends React.Component {
                 key={e.key}
                 compNum={e.compNum}
                 setValue={this.handleChange}
+                deleteComp={this.deleteExpComponent}
               />
             );
           })}

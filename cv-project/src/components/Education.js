@@ -30,7 +30,6 @@ class Education extends React.Component {
         <button
           type="button"
           className="delete-button"
-          count="eduCount"
           name={this.props.compNum}
           onClick={this.props.deleteComp}
         >
