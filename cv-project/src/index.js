@@ -9,14 +9,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-// .preview-container {
-//   overflow: visible;
-//   display: grid;
-//   border: 1px solid;
-//   margin: 0;
-//   padding: 0;
-//   max-height: max-content;
-//   background-color: #6b7b8c;
-//   width: 210mm;
-//   height: auto;
-// }
